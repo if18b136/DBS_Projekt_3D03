@@ -13,3 +13,10 @@ v1.2](https://user-images.githubusercontent.com/49987011/69871717-d0380680-12b3-
 4.  Create Triggers by exectuing "FH_Anwesenheitssystem_Triggers.sql"
 5.  Create Inserts by executing "FH_Anwesenheitssystem_Inserts.sql
 6.  The Database is now ready
+
+### Functions:
+
+
+### Coding conventions:
+
+
