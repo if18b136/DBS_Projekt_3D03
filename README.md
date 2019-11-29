@@ -14,7 +14,38 @@ v1.2](https://user-images.githubusercontent.com/49987011/69871717-d0380680-12b3-
 5.  Create Inserts by executing "FH_Anwesenheitssystem_Inserts.sql
 6.  The Database is now ready
 
+### ToDo-List:
+* Login
+    * Student-Login
+        * Credential-Verification
+        * Weiterleitung
+    * Personal-Login
+        * Credential-Verification
+        * Weiterleitung
+        
+* Logout
+        
+*  Nutzer erstellen
+    * Auswahl Student/Personal oder seperate Buttons
+
+*  Nutzer entfernen
+    * entfernen aus Personen, kaskadierend mit Personal/Student(je nach Implementation)
+
+*  Sachen anzeigen lassen (individuelle Views)
+    * Lektor sieht Studenten in seiner LVA
+    * Student sieht seine Kreuzerl
+    * Studentenansicht als Kalender??
+
+*  Studiengangsorganisation(SGO), LVA erstellen
+    * Berechtigung zum erstellen/loeschen von LVAs
+  
+* Kreuzerl-System
+    * Studenten setzen Kreuze(Zeitlimit fuer das setzen von Kreuzen?)
+    * Studenten sehen/bearbeiten gesetzte Kreuze
+    * Lektoren sehen Kreuze
+
 ### Functions:
+
 
 
 ### Coding conventions:
