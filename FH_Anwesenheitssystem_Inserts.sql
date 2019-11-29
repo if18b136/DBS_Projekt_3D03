@@ -13,7 +13,7 @@ values ('Harald', 'Wahl', to_date('01.01.1970','DD.MM.YYYY'));
 insert into PERSON (VORNAME, NACHNAME, GEBURTSDATUM)
 values ('Martin', 'Docsek', to_date('01.01.1980','DD.MM.YYYY'));
 insert into PERSON (VORNAME, NACHNAME, GEBURTSDATUM)
-values ('Felix', 'Mödritscher', to_date('01.01.1975','DD.MM.YYYY'));
+values ('Felix', 'MÃ¶dritscher', to_date('01.01.1975','DD.MM.YYYY'));
 insert into PERSON (VORNAME, NACHNAME, GEBURTSDATUM)
 values ('Sonja', 'Nagl', to_date('01.01.1990','DD.MM.YYYY'));
 insert into PERSON (VORNAME, NACHNAME, GEBURTSDATUM)
