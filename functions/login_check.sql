@@ -5,7 +5,7 @@ pw varchar2(255);
 login_success boolean := false;
 BEGIN
 	
-	SELECT count(*) INTO found FROM student WHERE USERNAME = f_uid;
+	SELECT count(*) INTO found FROM account WHERE USERNAME = f_uid;
 	
 	IF found >= 1 THEN
 		dbms_output.put_line('STUDENT FOUND');
