@@ -40,10 +40,7 @@
 
   CREATE TABLE "STUDENT" 
    (  "STUDENT_ID" NUMBER, 
-  "FK_PERSON_ID" NUMBER,
-  "FK_STUDIENGANG_ID" NUMBER,
-  "USERNAME" VARCHAR2(255) UNIQUE,
-  "PASSWORD" VARCHAR2(255)
+  "FK_PERSON_ID" NUMBER
    ) ;
 --------------------------------------------------------
 --  DDL for Table STUDIENGANG
@@ -84,18 +81,20 @@
 --------------------------------------------------------
 
   CREATE TABLE "KREUZERL_LISTE" 
-   (  "FK_LVA_EINHEIT_ID" NUMBER,
+   (  "KID" NUMBER,  
+  "FK_LVA_EINHEIT_ID" NUMBER,
   "ANZAHL_KREUZE" VARCHAR2(6)
    ) ;
 --------------------------------------------------------
---  DDL for Table KREUZERL_STUDENT
+--  DDL for Table ACCOUNT
 --  Kreuzerl-Student (LVA_Einh_ID, StudentID, Nummer)
 --------------------------------------------------------
 
-  CREATE TABLE "KREUZERL_STUDENT" 
-   (  "FK_LVA_EINHEIT_ID" NUMBER,
-  "FK_STUDENT_ID" NUMBER,
-  "NUMMER" NUMBER
+  CREATE TABLE "ACCOUNT" 
+   (  "FK_STUDENT_ID" NUMBER,
+  "FK_STUDIENGANG_ID" NUMBER,
+  "USERNAME" VARCHAR2(255),
+  "PASSWORD" VARCHAR2(255)
    ) ;
 --------------------------------------------------------
 --  DDL for Table LEITET
@@ -107,7 +106,17 @@
   "FK_LVA_ID" NUMBER,
   "FK_PERSONAL_ID" NUMBER
    ) ;
+--------------------------------------------------------
+--  DDL for Table KREUZT
+--  Personal leitet lva/lva_einheit (Lektor_LVA_ID, LVA_ID, Personal_ID, )
+--------------------------------------------------------
 
+  CREATE TABLE "KREUZT" 
+   (  "NUMMER" VARCHAR2(255),
+  "FK_USERNAME" VARCHAR2(255),
+  "FK_LVA_EINHEIT_ID" NUMBER,
+  "FK_KID" NUMBER
+   ) ;
 
 
 --------------------------------------------------------
@@ -163,12 +172,6 @@
   ALTER TABLE "STUDENT" MODIFY ("STUDENT_ID" NOT NULL ENABLE);
 
   ALTER TABLE "STUDENT" MODIFY ("FK_PERSON_ID" NOT NULL ENABLE);
-
-  ALTER TABLE "STUDENT" MODIFY ("FK_STUDIENGANG_ID" NOT NULL ENABLE);  
-
-  ALTER TABLE "STUDENT" MODIFY ("USERNAME" NOT NULL ENABLE);  
- 
-  ALTER TABLE "STUDENT" MODIFY ("PASSWORD" NOT NULL ENABLE);
  
   ALTER TABLE "STUDENT" ADD PRIMARY KEY ("STUDENT_ID") ENABLE;
 
@@ -220,19 +223,24 @@
 
   ALTER TABLE "KREUZERL_LISTE" MODIFY ("ANZAHL_KREUZE" NOT NULL ENABLE);
  
-  ALTER TABLE "KREUZERL_LISTE" ADD PRIMARY KEY ("FK_LVA_EINHEIT_ID") ENABLE;
+  ALTER TABLE "KREUZERL_LISTE" MODIFY ("KID" NOT NULL ENABLE);
+ 
+  ALTER TABLE "KREUZERL_LISTE" ADD PRIMARY KEY ("KID") ENABLE;
 
 --------------------------------------------------------
---  Constraints for Table KREUZERL_STUDENT
+--  Constraints for Table ACCOUNT
 --------------------------------------------------------
 
-  ALTER TABLE "KREUZERL_STUDENT" MODIFY ("FK_LVA_EINHEIT_ID" NOT NULL ENABLE);
+  ALTER TABLE "ACCOUNT" MODIFY ("FK_STUDIENGANG_ID" NOT NULL ENABLE);
 
-  ALTER TABLE "KREUZERL_STUDENT" MODIFY ("FK_STUDENT_ID" NOT NULL ENABLE);
+  ALTER TABLE "ACCOUNT" MODIFY ("FK_STUDENT_ID" NOT NULL ENABLE);
 
-  ALTER TABLE "KREUZERL_STUDENT" MODIFY ("NUMMER" NOT NULL ENABLE);
+  ALTER TABLE "ACCOUNT" MODIFY ("USERNAME" NOT NULL ENABLE);
 
-  ALTER TABLE "KREUZERL_STUDENT" ADD PRIMARY KEY ("FK_LVA_EINHEIT_ID", "FK_STUDENT_ID", "NUMMER") ENABLE;
+  ALTER TABLE "ACCOUNT" MODIFY ("PASSWORD" NOT NULL ENABLE);
+
+  ALTER TABLE "ACCOUNT" ADD PRIMARY KEY ("USERNAME") ENABLE;
+
 
 --------------------------------------------------------
 --  Constraints for Table LEITET
@@ -246,6 +254,19 @@
  
   ALTER TABLE "LEITET" ADD PRIMARY KEY ("LEKTOR_LVA_ID") ENABLE;
 
+--------------------------------------------------------
+--  Constraints for Table KREUZT
+--------------------------------------------------------
+
+ALTER TABLE "KREUZT" MODIFY ("NUMMER" NOT NULL ENABLE);
+
+ALTER TABLE "KREUZT" MODIFY ("FK_USERNAME" NOT NULL ENABLE);
+
+ALTER TABLE "KREUZT" MODIFY ("FK_LVA_EINHEIT_ID" NOT NULL ENABLE);
+
+ALTER TABLE "KREUZT" MODIFY ("FK_KID" NOT NULL ENABLE);
+
+ALTER TABLE "KREUZT" ADD PRIMARY KEY ("FK_USERNAME", "FK_LVA_EINHEIT_ID", "FK_KID");
 
 
 
@@ -269,9 +290,6 @@
 
   ALTER TABLE "STUDENT" ADD FOREIGN KEY ("FK_PERSON_ID")
     REFERENCES "PERSON" ("PERSON_ID") ENABLE;
- 
-  ALTER TABLE "STUDENT" ADD FOREIGN KEY ("FK_STUDIENGANG_ID")
-    REFERENCES "STUDIENGANG" ("STUDIENGANG_ID") ENABLE;
 
 --------------------------------------------------------
 --  Ref Constraints for Table STUDIENGANG
@@ -302,13 +320,13 @@
     REFERENCES "LVA_EINHEIT" ("LVA_EINHEIT_ID") ENABLE;
 
 --------------------------------------------------------
---  Ref Constraints for Table KREUZERL_STUDENT
+--  Ref Constraints for Table ACCOUNT
 --------------------------------------------------------
 
-  ALTER TABLE "KREUZERL_STUDENT" ADD FOREIGN KEY ("FK_LVA_EINHEIT_ID")
-    REFERENCES "LVA_EINHEIT" ("LVA_EINHEIT_ID") ENABLE;
+  ALTER TABLE "ACCOUNT" ADD FOREIGN KEY ("FK_STUDIENGANG_ID")
+    REFERENCES "STUDIENGANG" ("STUDIENGANG_ID") ENABLE;
 
-  ALTER TABLE "KREUZERL_STUDENT" ADD FOREIGN KEY ("FK_STUDENT_ID")
+  ALTER TABLE "ACCOUNT" ADD FOREIGN KEY ("FK_STUDENT_ID")
     REFERENCES "STUDENT" ("STUDENT_ID") ENABLE;
     
 
@@ -321,10 +339,23 @@
 
   ALTER TABLE "LEITET" ADD FOREIGN KEY ("FK_PERSONAL_ID")
     REFERENCES "PERSONAL" ("PERSONAL_ID") ENABLE;
+
+
+--------------------------------------------------------
+--  Ref Constraints for Table KREUZT
+--------------------------------------------------------
+
+  ALTER TABLE "KREUZT" ADD FOREIGN KEY ("FK_USERNAME")
+    REFERENCES "ACCOUNT" ("USERNAME") ENABLE;
+
+  ALTER TABLE "KREUZT" ADD FOREIGN KEY ("FK_LVA_EINHEIT_ID")
+    REFERENCES "LVA_EINHEIT" ("LVA_EINHEIT_ID") ENABLE;
  
+  ALTER TABLE "KREUZT" ADD FOREIGN KEY ("FK_KID")
+    REFERENCES "KREUZERL_LISTE" ("KID") ENABLE;
  
 
-    
+
 --------------------------------------------------------
 --  Daten aus Fughafenbase kopieren  // manuelle eingabe von namen, nachname, etc
 --------------------------------------------------------
