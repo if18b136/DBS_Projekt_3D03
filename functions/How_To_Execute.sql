@@ -27,3 +27,13 @@ BEGIN
 create_person('Berk', 'Berkmann', '10.10.1969');
 END;
 / 
+
+
+--SP_GET_STUDIENGANG
+/
+DECLARE
+	n varchar2(255);
+BEGIN
+	n := SP_Get_studiengang('if18b176'); 
+END;
+/
