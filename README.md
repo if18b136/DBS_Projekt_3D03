@@ -4,7 +4,7 @@ Datenbanksysteme - Semesterprojekt - Gruppe 3D03
 
 ### ERM-Model v1.3
 ![erm model
-v1.3](https://user-images.githubusercontent.com/49987011/69969358-90c02300-151c-11ea-835b-5062e688886f.png)
+v1.3](https://github.com/if18b136/DBS_Projekt_3D03/issues/3#issuecomment-573299465)
 
 ### How-To:
 1.  Drop all tables(if not dropped earlier) by executing the "FH_Anwesenheitssystem_loeschen.sql"
