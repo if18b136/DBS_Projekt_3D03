@@ -15,14 +15,7 @@ v1.3](https://user-images.githubusercontent.com/49987011/69969358-90c02300-151c-
 6.  The Database is now ready
 
 ### ToDo-List:
-* Login
-    * Student-Login
-        * Credential-Verification
-        * Weiterleitung
-    * Personal-Login
-        * Credential-Verification
-        * Weiterleitung
-        
+
 * Logout
         
 *  Nutzer erstellen
