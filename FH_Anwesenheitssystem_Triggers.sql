@@ -82,3 +82,14 @@ BEGIN
 END tr_br_i_lva_einheit_id;
 /
 
+-- Trigger for kreuzerl_liste
+
+CREATE OR REPLACE TRIGGER tr_br_i_kid
+  BEFORE INSERT ON kreuzerl_liste
+  FOR EACH ROW
+BEGIN
+  SELECT sq_kreuzerl_liste.nextval
+  INTO :new.kid
+  FROM dual;
+END tr_br_i_kid;
+/
