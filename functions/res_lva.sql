@@ -1,4 +1,4 @@
-CREATE OR REPLACE PROCEDURE SP_res_lva(f_uid in personal.personal_ID%TYPE, c_res_lva OUT SYS_REFCURSOR)
+CREATE OR REPLACE PROCEDURE SP_res_lva(f_uid in personal.username%TYPE, c_res_lva OUT SYS_REFCURSOR)
 IS
 BEGIN
 	OPEN c_res_lva FOR

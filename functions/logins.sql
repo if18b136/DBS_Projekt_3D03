@@ -79,7 +79,7 @@ end;
 
 --SP_LOGIN_SOG
 
-CREATE OR REPLACE function SP_login_sog
+CREATE OR REPLACE function SP_login_sgo
 (f_uid in varchar2,f_pw in varchar2)
 return number
 is
@@ -96,7 +96,7 @@ WHERE personal.username = f_uid;
 	
 	IF rg = 3 THEN
 		IF found >= 1 THEN
-			dbms_output.put_line('SOG FOUND');
+			dbms_output.put_line('SGO FOUND');
 			SELECT PASSWORD INTO pw FROM personal WHERE USERNAME = f_uid;
 			IF f_pw = pw THEN
 				login_success := 1;
@@ -109,7 +109,7 @@ WHERE personal.username = f_uid;
 			END IF;
 		ELSE 
 			login_success := 0;
-			dbms_output.put_line('NO SOG FOUND');
+			dbms_output.put_line('NO SGO FOUND');
 		END IF;
 	ELSE
 		login_success := 0;
