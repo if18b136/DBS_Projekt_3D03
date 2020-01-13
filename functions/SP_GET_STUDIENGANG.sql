@@ -2,8 +2,8 @@
 /**
 /** Procedure: sp_get_studiengang
 /** In: f_uid - the username of student
-/** Out: f_studiengang - the student's major
-/** Description: Returns the major degree of a student
+/** Out: f_studiengang - the student's degree course
+/** Description: Returns the degree course of a student
 /**
 /*********************************************************************
 
