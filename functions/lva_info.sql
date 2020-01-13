@@ -2,7 +2,7 @@
 /**
 /** Procedure: sp_lva_info
 /** In: f_uid - Username of a student
-/** Out: recordset of all lectures visited by the student
+/** Out: recordset of all lectures attended by the student
 /** Description: Returns a list of all lectures of the student, including title and name of the lectors
 /**
 /*********************************************************************
