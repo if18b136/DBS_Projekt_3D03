@@ -1,3 +1,12 @@
+/*********************************************************************
+/**
+/** Procedure: sp_lva_students
+/** In: f_titel - Titel of a lecture
+/** Out: recordset of students attending the lecture
+/** Description: Returns a list of all students of that lecture, including name and username
+/**
+/*********************************************************************
+
 CREATE OR REPLACE PROCEDURE SP_lva_students(f_titel in lva.titel%TYPE, c_lva_students OUT SYS_REFCURSOR)
 IS
 BEGIN
