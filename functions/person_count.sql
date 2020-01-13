@@ -1,3 +1,11 @@
+/*********************************************************************
+/**
+/** Function: person_count
+/** Out: number of all persons
+/** Description: Counts all persons in the database
+/**
+/*********************************************************************
+
 CREATE OR REPLACE FUNCTION person_count
 return number
 AS total number(2) := 0; 

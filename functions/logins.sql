@@ -1,5 +1,11 @@
-
---SP_LOGIN_STUDENT
+/*********************************************************************
+/**
+/** Procedure: sp_login_student
+/** In: f_uid, f_pw - Username and password of a student
+/** Out: login_success - 0/1, depending on input
+/** Description: Validates the given credentials, returns 1 on success 
+/**
+/*********************************************************************
 
 CREATE OR REPLACE function SP_login_student
 (f_uid in varchar2,f_pw in varchar2)
@@ -34,7 +40,14 @@ return login_success;
 end;
 /
 
---SP_LOGIN_LEKTOR
+/*********************************************************************
+/**
+/** Procedure: sp_login_lektor
+/** In: f_uid, f_pw - Username and password of a lector
+/** Out: login_success - 0/1, depending on input
+/** Description: Validates the given credentials, returns 1 on success 
+/**
+/*********************************************************************
 
 CREATE OR REPLACE function SP_login_lektor
 (f_uid in varchar2,f_pw in varchar2)
@@ -77,7 +90,14 @@ return login_success;
 end;
 /
 
---SP_LOGIN_SOG
+/*********************************************************************
+/**
+/** Procedure: sp_login_sgo
+/** In: f_uid, f_pw - Username and password of a mid-level admin
+/** Out: login_success - 0/1, depending on input
+/** Description: Validates the given credentials, returns 1 on success 
+/**
+/*********************************************************************
 
 CREATE OR REPLACE function SP_login_sgo
 (f_uid in varchar2,f_pw in varchar2)
@@ -120,7 +140,14 @@ return login_success;
 end;
 /
 
---SP_LOGIN_ADMIN
+/*********************************************************************
+/**
+/** Procedure: sp_login_admin
+/** In: f_uid, f_pw - Username and password of an admin
+/** Out: login_success - 0/1, depending on input
+/** Description: Validates the given credentials, returns 1 on success 
+/**
+/*********************************************************************
 
 CREATE OR REPLACE function SP_login_admin
 (f_uid in varchar2,f_pw in varchar2)

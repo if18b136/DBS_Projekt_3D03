@@ -1,3 +1,12 @@
+/*********************************************************************
+/**
+/** Procedure: sp_lvas_of_stg
+/** In: f_stg - the title of a degree course
+/** Out: recordset of all lectures of the degree, with names of their lectors
+/** Description: Returns a list of all lectures of a degree course
+/**
+/*********************************************************************
+
 CREATE OR REPLACE PROCEDURE SP_lvas_of_stg(f_stg in studiengang.bezeichnung%TYPE, c_lva OUT SYS_REFCURSOR)
 IS
 BEGIN

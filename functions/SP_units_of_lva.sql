@@ -1,3 +1,12 @@
+/*********************************************************************
+/**
+/** Procedure: sp_units_of_lva
+/** In: f_lva - the ID of a lecture
+/** Out: recordset of all lessons of the asked lecture
+/** Description: Returns a list of al lessons of that lecture, including Description, Start, End and the Name of the Lector
+/**
+/*********************************************************************
+
 CREATE OR REPLACE PROCEDURE SP_units_of_lva(f_lva in lva.lva_id%TYPE, c_lva_unit OUT SYS_REFCURSOR)
 IS
 BEGIN

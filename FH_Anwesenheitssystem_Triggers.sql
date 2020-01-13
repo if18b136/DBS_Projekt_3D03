@@ -1,4 +1,11 @@
--- Trigger for Person_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_person_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_person_id
 	BEFORE INSERT ON person
@@ -10,7 +17,14 @@ BEGIN
 END tr_br_i_person_id;
 /
 
--- Trigger for Personal_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_personal_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_personal_id
 	BEFORE INSERT ON personal
@@ -22,7 +36,14 @@ BEGIN
 END tr_br_i_personal_id;
 /
 
--- Trigger for Student_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_student_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_student_id
 	BEFORE INSERT ON student
@@ -34,7 +55,14 @@ BEGIN
 END tr_br_i_student_id;
 /
 
--- Trigger for Studiengang_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_studiengang_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_studiengang_id
 	BEFORE INSERT ON studiengang
@@ -46,7 +74,14 @@ BEGIN
 END tr_br_i_studiengang_id;
 /
 
--- Trigger for LVA_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_lva_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_lva_id
 	BEFORE INSERT ON lva
@@ -58,7 +93,14 @@ BEGIN
 END tr_br_i_lva_id;
 /
 
--- Trigger for Lektor_LVA_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_lektor_lva_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_lektor_lva_id
 	BEFORE INSERT ON leitet
@@ -70,7 +112,14 @@ BEGIN
 END tr_br_i_lektor_lva_id;
 /
 
--- Trigger for LVA_Einheit_ID
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_lva_einheit_id
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_lva_einheit_id
 	BEFORE INSERT ON lva_einheit
@@ -82,7 +131,14 @@ BEGIN
 END tr_br_i_lva_einheit_id;
 /
 
--- Trigger for kreuzerl_liste
+/*********************************************************************
+/**
+/** Trigger: tr_br_i_kid
+/** Type: Before row
+/** Type Extension: insert
+/** Description: adds the auto-increment ID to a new table-entry
+/**
+/*********************************************************************
 
 CREATE OR REPLACE TRIGGER tr_br_i_kid
   BEFORE INSERT ON kreuzerl_liste
