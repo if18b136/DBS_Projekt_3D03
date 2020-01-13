@@ -1,3 +1,12 @@
+/*********************************************************************
+/**
+/** Procedure: sp_get_studiengang
+/** In: f_uid - the username of student
+/** Out: f_studiengang - the student's major
+/** Description: Returns the major degree of a student
+/**
+/*********************************************************************
+
 CREATE OR REPLACE FUNCTION SP_GET_STUDIENGANG (f_uid in varchar2)
 return varchar2
 IS
