@@ -1,4 +1,6 @@
--- Sequences for autoincrementing IDs
+--------------------------------------------------------
+--  DDL for Sequences for auto-incrementing ID's
+--------------------------------------------------------
 
 DROP SEQUENCE sq_person;
 DROP SEQUENCE sq_personal;
