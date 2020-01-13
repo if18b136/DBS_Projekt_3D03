@@ -1,3 +1,12 @@
+/*********************************************************************
+/**
+/** Procedure: sp_res_lva
+/** In: f_uid - username of a lector
+/** Out: recordset of all lectures given by the lector
+/** Description: Returns a list of all lectures of a lector, including title and degree course
+/**
+/*********************************************************************
+
 CREATE OR REPLACE PROCEDURE SP_res_lva(f_uid in personal.username%TYPE, c_res_lva OUT SYS_REFCURSOR)
 IS
 BEGIN
